@@ -35,7 +35,7 @@ This project was developed with the following technologies:
 ## 💻 Project
  GitFav is an application developed in Rocketseat's explorer 10, we work with classes in JavaScript, the application retrieves user data from Github using the public API of Github and returns with the username, number of repositories and number of followers, thus saving the information in localStorage.
 
-- [Access the finished project online](https://erlanmarinho.github.io/github-favorites/)
+- [Access the finished project online](https://erlanmarinho.github.io/gitFav/)
 
 
 ##  License
