@@ -21,6 +21,9 @@
   --background-table-row-odd: #06181C;
   --border-table: #4a808c;
 
+  --background-noFavorites: #030b0c;
+  --text-color-noFavorites: #4e5455;
+
   --text-color-primary: #E1E1E6;
   --text-color-secondary: white;
   --text-color-danger-light: #F75A68;
@@ -170,9 +173,7 @@ header {
 
 /* ================  TABLE  ================ */
 
-.container {
-  border-radius: 2rem;
-}
+
 
 
 table * {
@@ -181,19 +182,21 @@ table * {
  
 }
 
-table {
+.table {
 
-  table-layout: fixed;
-  border-collapse: collapse;
-  table-layout: fixed;
-  border-radius: 2rem;    
-  overflow: overlay;
-  display: flex;
-  flex-direction: column;
+  border-radius: 1.2rem;
+  overflow: hidden;
+
+  max-height: 68.8rem;
+  overflow-y: overlay;
   border: 2px solid var(--border-table);
 
-  border-spacing: 0;
-  margin-top: 0;
+ 
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
 
@@ -317,48 +320,91 @@ td.user a p {
 td.user a span {
   font-weight: 300;
 }
-
 /* ================ EMPTY LIST ================ */
-
-tbody:has(.empty) {
-  overflow: hidden;  
-}
-
-.empty { 
-  display: block;
-  width: 100%;
-}
-
-.empty td {
-  height: 40rem;
-  width: 100%;
-  text-align: center;
+.empty-state {
+  
+  background-color: var(--background-noFavorites);
 
   display: flex;
-  justify-content: center;
 }
 
-.empty td div {
+.no-favs {
   display: flex;
-  gap: 6rem;
   align-items: center;
   justify-content: center;
+  gap: 6rem;
+
+  margin: 20rem auto 10.7rem;
 }
 
-.empty td div > img{
-  width: 13rem;
-  height: 12rem;
+.no-favs svg {
+  
+  width: 13.2rem;
+  height: 12.5rem;
 }
 
-.empty td span{
-  color: #4E5455;
-  font-family: 'Roboto Mono';
-  font-weight: 700;
+.no-favs h2 {
   font-size: 4rem;
-  line-height: 4rem;
+  line-height: 2.5rem;
+  color: var(--text-color-noFavorites);
 }
 
+.hide {
+  display: none;
+}
+/* ================ media queries ============== */
 
+@media only screen and (max-width: 850px) {
+
+  :root {
+    font-size: 1.2vw;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  header img {
+    height: 4.2rem;
+  }
+}
+
+@media only screen and (max-width: 450px) 
+  and (orientation: portrait) {
+  :root {
+    font-size: 1.3vw;
+  }
+
+  header button span {
+    display: none;
+  }
+
+  thead, tbody {
+    display: block; 
+  }
+
+  tbody {
+    max-height: initial;
+    overflow: auto;  
+  }
+
+  .search input[type="text"] {
+    height: 7.5rem;
+    width:  60vw;
+
+    margin-right: 2rem;
+
+    padding: 1.2rem 3.2rem;
+  
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 2.4rem;
+  }
+
+}
 
 
 

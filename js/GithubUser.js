@@ -19,7 +19,7 @@ export class GithubUser {
         return { 
           login,
           name,
-          repos: public_repos,
+          public_repos,
           followers }
       })
 
@@ -31,7 +31,7 @@ export class GithubUser {
       
     } catch (error) {
 
-      //console.error(error)
+      console.error(error)
 
       return {}
       

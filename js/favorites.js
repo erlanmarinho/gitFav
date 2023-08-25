@@ -76,6 +76,7 @@ export class FavoritesView extends Favorites {
 
   update() {
     this.removeAllTr()
+    this.emptyState()
 
     this.entries.forEach(user => {
       const row = this.createRow()
@@ -123,6 +124,14 @@ export class FavoritesView extends Favorites {
 
      return tr
   }
+
+  emptyState() {
+    if (this.entries.length === 0) {
+        this.root.querySelector('.empty-state').classList.remove('hide')
+    } else {
+        this.root.querySelector('.empty-state').classList.add('hide')
+    }
+}
 
   removeAllTr() {
     this.tbody.querySelectorAll('tr')
